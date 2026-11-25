@@ -1,0 +1,49 @@
+body {
+    min-height: 100vh;
+}
+
+main.contenedor-principal {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-login {
+    padding: 2.5rem;
+    width: 25rem;
+    text-align: center;
+}
+
+.tarjeta-login .logo {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1.25rem;
+}
+
+.tarjeta-login .logo span {
+    font-size: 1.5rem;
+}
+
+.tarjeta-login header h1,
+.tarjeta-login header h2 {
+    margin-bottom: 0.3125rem;
+}
+
+.tarjeta-login header p {
+    margin-bottom: 1.875rem;
+}
+
+.formulario-login {
+    text-align: left;
+}
+
+@media (max-width: 375px) {
+    .tarjeta-login {
+        width: 100%;
+        max-width: 20.9375rem;
+        padding: 1.875rem 1.25rem;
+    }
+}

@@ -1,0 +1,58 @@
+<component view-model="GaleriaProducto">
+
+  <div class="imagen-principal">
+
+    <button
+      class="flecha-galeria flecha-izquierda"
+      type="button"
+      click="imagenAnterior"
+      aria-label="Imagen anterior"
+    >
+      <i
+        class="ph ph-caret-left"
+        aria-hidden="true"
+      ></i>
+    </button>
+
+    <img
+      bind-src="imagenPrincipal"
+      alt="Imagen del producto"
+    >
+
+    <button
+      class="flecha-galeria flecha-derecha"
+      type="button"
+      click="imagenSiguiente"
+      aria-label="Imagen siguiente"
+    >
+      <i
+        class="ph ph-caret-right"
+        aria-hidden="true"
+      ></i>
+    </button>
+
+  </div>
+
+  <ul
+    class="miniaturas"
+    aria-label="Imágenes del producto"
+  >
+
+    <li for-each="imagen of imagenes" index="indice">
+
+      <button
+        class="miniatura"
+        type="button"
+        click="seleccionarImagen"
+      >
+        <img
+          bind-src="imagen.url"
+          alt="Miniatura del producto"
+        >
+      </button>
+
+    </li>
+
+  </ul>
+
+</component>

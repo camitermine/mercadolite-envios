@@ -1,0 +1,19 @@
+# Dependencias y salidas de build
+node_modules/
+dist/
+coverage/
+build/
+.gradle/
+.kotlin/
+
+# IDEs y sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs y variables de entorno
+*.log
+.env
+.env.*

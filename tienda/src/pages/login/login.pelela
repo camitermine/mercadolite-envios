@@ -1,0 +1,36 @@
+<pelela view-model="Login">
+  <main class="contenedor-principal">
+    <section class="tarjeta tarjeta-login" aria-labelledby="titulo-login">
+      <header>
+        <figure class="logo" aria-hidden="true">
+          <span>M</span>
+        </figure>
+
+        <h1 id="titulo-login">Bienvenido a MercadoLite</h1>
+        <p>Ingresá tu nombre para empezar a comprar.</p>
+      </header>
+
+      <form class="formulario-login" aria-label="Iniciar sesión">
+        <div class="grupo-formulario" bind-class="claseNombre">
+          <label for="nombre-login">Decinos tu nombre</label>
+          <input
+            id="nombre-login"
+            class="campo-texto"
+            type="text"
+            bind-value="nombre"
+            enter="ingresar"
+            placeholder="Ej. Julieta Fernández"
+            autocomplete="name"
+            autofocus
+            aria-required="true"
+          >
+          <small if="errorNombre" bind-content="errorNombre" role="alert"></small>
+        </div>
+
+        <button type="button" class="boton boton-primario boton-ancho" click="ingresar">
+          Ingresar
+        </button>
+      </form>
+    </section>
+  </main>
+</pelela>

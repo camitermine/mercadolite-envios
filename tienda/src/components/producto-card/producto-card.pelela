@@ -1,0 +1,23 @@
+<component view-model="ProductoCard">
+  <article
+    class="tarjeta tarjeta-producto"
+    bind-class="producto.claseTarjeta"
+    click="seleccionar"
+  >
+    <figure class="miniatura-producto">
+      <span class="etiqueta" bind-content="producto.categoriaFormateada"></span>
+      <img bind-src="producto.thumbnail" bind-alt="producto.title">
+    </figure>
+    <div class="info-producto">
+      <h2 bind-content="producto.title"></h2>
+      <p class="precio" bind-content="producto.precioFormateado"></p>
+      <p class="calificacion">
+        <calificacion-estrellas
+          prop-calificacion="producto.rating"
+        ></calificacion-estrellas>
+        <span bind-content="producto.rating"></span>
+      </p>
+      <p class="stock" bind-class="producto.claseStock" bind-content="producto.textoStock"></p>
+    </div>
+  </article>
+</component>

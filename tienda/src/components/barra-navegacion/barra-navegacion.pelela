@@ -1,0 +1,24 @@
+<component view-model="BarraNavegacion">
+  <header class="barra-navegacion" bind-class="clasesMenu" aria-label="Encabezado principal">
+    <a href="/catalogo" class="marca" aria-label="MercadoLite - Ir al catálogo" click="irAlCatalogo">
+      <span class="marca-icono" aria-hidden="true">M</span>
+      <span class="marca-nombre">MercadoLite</span>
+    </a>
+
+    <button
+      type="button"
+      class="boton-menu"
+      click="alternarMenu"
+      aria-label="Abrir o cerrar el menú"
+      aria-controls="menu-principal"
+    >
+      <i if="menuCerrado" class="ph ph-list" aria-hidden="true"></i>
+      <i if="menuAbierto" class="ph ph-x" aria-hidden="true"></i>
+    </button>
+
+    <nav id="menu-principal" class="menu-principal" aria-label="Navegación principal">
+      <a href="/catalogo" class="enlace-navegacion" click="irAlCatalogo">Catálogo</a>
+      <a href="/mis-pedidos" class="enlace-navegacion" click="irAMisPedidos">Mis pedidos</a>
+    </nav>
+  </header>
+</component>

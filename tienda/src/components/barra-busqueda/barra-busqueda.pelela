@@ -1,0 +1,15 @@
+<component view-model="BarraBusqueda">
+  <form class="barra-busqueda" role="search">
+    <input
+      type="search"
+      name="busqueda"
+      bind-value="busqueda"
+      enter="buscar"
+      placeholder="Buscar"
+      aria-label="Buscar"
+    >
+    <button type="button" class="boton-busqueda" click="buscar" aria-label="Buscar">
+      <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+    </button>
+  </form>
+</component>

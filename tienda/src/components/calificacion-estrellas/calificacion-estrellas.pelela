@@ -1,0 +1,7 @@
+<component view-model="CalificacionEstrellas">
+  <i
+    for-each="estrella of estrellas"
+    bind-class="estrella"
+    aria-hidden="true"
+  ></i>
+</component>

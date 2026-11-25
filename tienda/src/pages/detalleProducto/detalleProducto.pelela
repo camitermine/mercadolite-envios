@@ -1,0 +1,244 @@
+<pelela view-model="DetalleProducto">
+
+  <barra-navegacion></barra-navegacion>
+
+  <main if="productoCargado">
+
+    <article class="detalle-producto">
+
+      <figure class="galeria-producto">
+
+        <galeria-producto
+          prop-imagenes="imagenes"
+          link-imagen-principal="imagenPrincipal"
+        ></galeria-producto>
+
+      </figure>
+
+      <section class="informacion-producto">
+
+        <span
+          class="etiqueta"
+          bind-content="producto.categoriaFormateada"
+        ></span>
+
+        <h1 bind-content="producto.title"></h1>
+
+        <div class="calificacion-producto">
+
+          <span
+            class="estrellas"
+            aria-hidden="true"
+          >
+            <calificacion-estrellas
+              prop-calificacion="producto.rating"
+            ></calificacion-estrellas>
+          </span>
+
+          <span bind-content="producto.rating"></span>
+
+          <span aria-hidden="true">·</span>
+
+          <span bind-content="producto.textoCantidadResenas"></span>
+
+        </div>
+
+        <div class="precio-detalle">
+
+          <span bind-content="producto.precioFormateado"></span>
+
+          <span
+            if="producto.tieneDescuento"
+            class="etiqueta etiqueta-alerta descuento"
+            bind-content="producto.descuentoFormateado"
+          ></span>
+
+          <span
+            if="producto.tieneDescuento"
+            class="precio-anterior"
+            bind-content="producto.precioAnterior"
+          ></span>
+
+        </div>
+
+        <dl class="informacion-extra">
+
+          <div>
+            <dt class="solo-lectores">
+              SKU
+            </dt>
+
+            <dd>
+              SKU:
+              <span bind-content="producto.sku"></span>
+            </dd>
+          </div>
+
+          <div
+            class="separador"
+            aria-hidden="true"
+          >
+            ·
+          </div>
+
+          <div>
+            <dt class="solo-lectores">
+              Entrega
+            </dt>
+
+            <dd bind-content="producto.shippingInformation"></dd>
+          </div>
+
+          <div
+            class="separador"
+            aria-hidden="true"
+          >
+            ·
+          </div>
+
+          <div>
+            <dt class="solo-lectores">
+              Devoluciones
+            </dt>
+
+            <dd bind-content="producto.returnPolicy"></dd>
+          </div>
+
+        </dl>
+
+        <div class="stock-detalle" bind-class="producto.claseStock">
+
+          <i
+            class="ph-fill ph-circle"
+            aria-hidden="true"
+          ></i>
+
+          <span
+            class="stock-cantidad"
+            bind-content="producto.textoStock"
+          ></span>
+
+        </div>
+
+        <p
+          class="descripcion-producto"
+          bind-content="producto.description"
+        ></p>
+
+        <div class="formulario-pedido">
+
+          <div class="cantidad-contenedor">
+
+            <label for="cantidad-input">
+              Cantidad
+            </label>
+
+            <div class="selector-cantidad">
+
+              <button
+                type="button"
+                click="disminuirCantidad"
+                aria-label="Disminuir cantidad"
+              >
+                −
+              </button>
+
+              <input
+                type="number"
+                id="cantidad-input"
+                bind-value="cantidad"
+                readonly
+                aria-label="Cantidad seleccionada"
+              >
+
+              <button
+                type="button"
+                click="aumentarCantidad"
+                aria-label="Aumentar cantidad"
+              >
+                +
+              </button>
+
+            </div>
+
+            <small>
+              Pedido mínimo:
+              <span bind-content="producto.minimumOrderQuantity"></span>
+              unidades
+            </small>
+
+          </div>
+
+          <button
+            class="boton boton-primario boton-ancho boton-pedido"
+            type="button"
+            click="hacerPedido"
+            bind-enabled="puedeHacerPedido"
+          >
+            Hacer pedido
+          </button>
+
+        </div>
+
+      </section>
+
+    </article>
+
+    <section class="seccion-resenas">
+
+      <h2>Reseñas</h2>
+
+      <div class="resenas-contenido">
+
+        <article
+          class="tarjeta resumen-resenas"
+          aria-label="Resumen de calificaciones"
+        >
+
+          <strong
+            class="numero-resena"
+            bind-content="producto.rating"
+          ></strong>
+
+          <div class="estrellas-resumen">
+
+            <calificacion-estrellas
+              prop-calificacion="producto.rating"
+            ></calificacion-estrellas>
+
+          </div>
+
+          <span
+            bind-content="producto.textoCantidadResenas"
+          ></span>
+
+        </article>
+
+        <div class="lista-resenas">
+
+          <div for-each="resena of resenas">
+
+            <resena-card
+              prop-resena="resena"
+            ></resena-card>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <p if="cargando">
+    Cargando producto...
+  </p>
+
+  <p
+    if="hayMensajeError"
+    bind-content="mensajeError"
+  ></p>
+
+</pelela>

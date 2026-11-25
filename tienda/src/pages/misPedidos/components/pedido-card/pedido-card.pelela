@@ -1,0 +1,23 @@
+<component view-model="PedidoCard">
+  <article class="tarjeta tarjeta-pedido">
+    <img class="miniatura-pedido" bind-src="pedido.producto.thumbnail" bind-alt="pedido.producto.title">
+
+    <div class="info-pedido">
+      <span class="numero-pedido" bind-content="pedido.numeroFormateado"></span>
+      <h2 class="titulo-pedido" bind-content="pedido.producto.title"></h2>
+      <span class="meta-pedido"><span class="texto-cantidad-larga">Cantidad</span><span class="texto-cantidad-corta">Cant.</span> <span bind-content="pedido.detalleCantidadYFecha"></span></span>
+      <span class="destinatario-pedido" bind-content="pedido.destinatario"></span>
+      <span if="pedido.detalleEnvio" class="envio-pedido" bind-content="pedido.detalleEnvio"></span>
+    </div>
+
+    <div class="grupo-estado">
+      <span class="etiqueta estado-pedido" bind-class="pedido.claseEstado" bind-content="pedido.textoEstado"></span>
+      <span class="precio-pedido" bind-content="pedido.totalFormateado"></span>
+    </div>
+
+    <div class="acciones-pedido">
+      <button type="button" class="boton boton-primario" click="verDetalle" aria-label="Ver detalle del pedido">Ver detalle</button>
+      <button if="pedido.puedeCancelarse" type="button" class="boton boton-peligro" click="pedirCancelacion" aria-label="Cancelar el pedido">Cancelar</button>
+    </div>
+  </article>
+</component>

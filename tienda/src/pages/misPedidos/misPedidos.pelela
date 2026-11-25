@@ -1,0 +1,49 @@
+<pelela view-model="MisPedidos">
+  <barra-navegacion></barra-navegacion>
+
+  <main class="pedidos">
+    <section
+      if="mensajeConfirmacion"
+      class="tarjeta tarjeta-confirmacion"
+      role="status"
+      aria-label="Confirmación del pedido"
+    >
+      <p class="texto-confirmacion" bind-content="mensajeConfirmacion"></p>
+      <button type="button" class="boton boton-primario" click="cerrarConfirmacion">Cerrar</button>
+    </section>
+
+    <header if="hayPedidos" class="encabezado-pedidos">
+      <h1>Mis pedidos</h1>
+      <barra-busqueda link-busqueda-aplicada="busquedaAplicada"></barra-busqueda>
+    </header>
+
+    <p if="cargando" class="estado-pedidos" role="status">Cargando pedidos...</p>
+
+    <p if="mensajeError" class="estado-pedidos mensaje-error" bind-content="mensajeError" role="alert"></p>
+
+    <div for-each="pedido of pedidosFiltrados" class="contenedor-pedido">
+      <pedido-card
+        prop-pedido="pedido"
+        prop-al-cancelar="alCancelarPedido"
+      ></pedido-card>
+    </div>
+
+    <p if="sinResultados" class="estado-pedidos" role="status">
+      No encontramos pedidos para esa búsqueda.
+    </p>
+
+    <div if="estadoVacio" class="estado-vacio">
+      <div class="ilustracion-vacia" aria-hidden="true">
+        <span>ilustración</span>
+      </div>
+
+      <div class="texto-vacio">
+        <h1>Todavía no hiciste ningún pedido</h1>
+        <p>Explorá el catálogo y encontrá productos para tu primer pedido.</p>
+      </div>
+
+      <a href="/catalogo" class="boton boton-primario" click="irAlCatalogo">Explorar catálogo</a>
+    </div>
+  </main>
+
+</pelela>

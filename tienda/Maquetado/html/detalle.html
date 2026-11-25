@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream - MercadoLite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/detalle.css">
+</head>
+
+<body>
+    <header class="nav-volver" aria-label="Navegación secundaria">
+        <a href="#" class="enlace-volver" aria-label="Volver al catálogo">
+            <i class="ph ph-arrow-left" aria-hidden="true"></i>
+            <span>Volver<span class="texto-catalogo"> al catálogo</span></span>
+        </a>
+        <a href="#" class="enlace-pedidos">Mis pedidos</a>
+    </header>
+
+    <main>
+        <article class="detalle-producto">
+            <figure class="galeria-producto">
+                <div class="imagen-principal">
+                    <img src="../images/ice-cream.png" alt="Ice Cream sabor almendras">
+                </div>
+
+                <ul class="miniaturas" aria-label="Imágenes del producto">
+                    <li>
+                        <button class="miniatura activa" type="button" aria-label="Ver imagen 1" aria-current="true">
+                            <img src="../images/ice-cream.png" alt="Vista principal de Ice Cream">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="miniatura" type="button" aria-label="Ver imagen 2">
+                            <img src="../images/ice-cream.png" alt="Segunda vista de Ice Cream">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="miniatura" type="button" aria-label="Ver imagen 3">
+                            <img src="../images/ice-cream.png" alt="Tercera vista de Ice Cream">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="miniatura" type="button" aria-label="Ver imagen 4">
+                            <img src="../images/ice-cream.png" alt="Cuarta vista de Ice Cream">
+                        </button>
+                    </li>
+                </ul>
+            </figure>
+
+            <section class="informacion-producto">
+                <span class="etiqueta">Almacén</span>
+                <h1>Ice Cream</h1>
+
+                <div class="calificacion-producto" aria-label="3.4 de 5 estrellas, 3 reseñas">
+                    <span class="estrellas" aria-hidden="true">
+                        <i class="ph-fill ph-star estrella-llena"></i>
+                        <i class="ph-fill ph-star estrella-llena"></i>
+                        <i class="ph-fill ph-star estrella-llena"></i>
+                        <i class="ph ph-star estrella-vacia"></i>
+                        <i class="ph ph-star estrella-vacia"></i>
+                    </span>
+                    <span>3.4</span>
+                    <span aria-hidden="true">·</span>
+                    <span>3<span class="texto-resenas"> reseñas</span></span>
+                </div>
+
+                <div class="precio-detalle">
+                    <span>$5,49</span>
+                    <span class="etiqueta etiqueta-alerta descuento">-9%</span>
+                    <span class="precio-anterior">$6,01</span>
+                </div>
+
+                <dl class="informacion-extra">
+                    <div>
+                        <dt class="solo-lectores">SKU</dt>
+                        <dd>SKU: GR-8R0-GRE-02</dd>
+                    </div>
+                    <div class="separador" aria-hidden="true">·</div>
+                    <div>
+                        <dt class="solo-lectores">Entrega</dt>
+                        <dd>Llega en 2 semanas</dd>
+                    </div>
+                    <div class="separador" aria-hidden="true">·</div>
+                    <div>
+                        <dt class="solo-lectores">Devoluciones</dt>
+                        <dd>Sin devoluciones</dd>
+                    </div>
+                </dl>
+
+                <div class="stock-detalle">
+                    <i class="ph-fill ph-circle" aria-hidden="true"></i>
+                    <span>En stock <span class="stock-cantidad">— 27 disponibles</span></span>
+                </div>
+
+                <p class="descripcion-producto">
+                    Helado cremoso y delicioso, disponible en variedad de sabores
+                    para un antojo perfecto. Se conserva en frío y se elabora con
+                    ingredientes seleccionados.
+                </p>
+
+                <div class="formulario-pedido">
+                    <div class="cantidad-contenedor">
+                        <label for="cantidad-input">Cantidad</label>
+                        <div class="selector-cantidad">
+                            <button type="button" aria-label="Disminuir cantidad">−</button>
+                            <input type="number" id="cantidad-input" value="42" min="42" readonly aria-label="Cantidad seleccionada">
+                            <button type="button" aria-label="Aumentar cantidad">+</button>
+                        </div>
+                        <small>Pedido mínimo: 42 unidades</small>
+                    </div>
+
+                    <button class="boton boton-primario boton-ancho boton-pedido" type="button">Hacer pedido</button>
+                </div>
+            </section>
+        </article>
+
+        <section class="seccion-resenas">
+            <h2>Reseñas</h2>
+
+            <div class="resenas-contenido">
+                <article class="tarjeta resumen-resenas" aria-label="Resumen de calificaciones">
+                    <strong class="numero-resena">3.4</strong>
+                    <div class="estrellas-resumen" aria-label="3.4 de 5 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                    </div>
+                    <span>3 reseñas</span>
+                </article>
+
+                <article class="tarjeta resena">
+                    <header class="cabecera-resena">
+                        <div class="resena-autor">
+                            <span class="resena-avatar" aria-hidden="true">E</span>
+                            <div>
+                                <strong>Elijah Cruz</strong>
+                                <div class="estrellas-resena" aria-label="5 de 5 estrellas">
+                                    <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                                    <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                                    <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                                    <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                                    <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <time datetime="2025-04-30">30 abr 2025</time>
+                    </header>
+                    <p>Very pleased!</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,524 @@
+.detalle-producto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.galeria-producto {
+    width: 100%;
+    min-width: 0;
+}
+
+.imagen-principal {
+    position: relative;
+    width: 100%;
+    height: 22rem;
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-principal img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    display: block;
+}
+
+.flecha-galeria {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-full);
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color var(--transicion-rapida);
+}
+
+.flecha-galeria:hover {
+    background-color: var(--color-superficie);
+}
+
+.flecha-izquierda {
+    left: 0.5rem;
+}
+
+.flecha-derecha {
+    right: 0.5rem;
+}
+
+.miniaturas {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0.75rem 0 0;
+    list-style: none;
+}
+
+.miniaturas li {
+    list-style: none;
+}
+
+.miniatura {
+    width: 4rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-sm);
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color var(--transicion-rapida);
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.miniatura.activa {
+    border: 2px solid var(--color-primario);
+}
+
+.informacion-producto {
+    min-width: 0;
+    padding-top: 0.25rem;
+}
+
+.informacion-producto h1 {
+    margin: 0.5rem 0;
+    color: var(--color-texto-oscuro);
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+.calificacion-producto {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-texto-claro);
+    font-size: 0.875rem;
+}
+
+.estrellas,
+.estrellas-resumen,
+.estrellas-resena {
+    display: flex;
+}
+
+.estrellas {
+    gap: 0.125rem;
+    font-size: 1rem;
+}
+
+.precio-detalle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.75rem 0 0;
+    font-size: 1.75rem;
+}
+
+.precio-anterior {
+    color: var(--color-texto-claro);
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.informacion-extra {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.75rem 0 0;
+    color: var(--color-texto-claro);
+    font-size: 0.8rem;
+}
+
+.stock-detalle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.75rem 0 0;
+    color: var(--color-exito);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.stock-detalle.sin-stock {
+    color: var(--color-peligro);
+}
+
+.stock-detalle i {
+    font-size: 0.5rem;
+}
+
+.descripcion-producto {
+    max-width: 30rem;
+    margin: 1rem 0 1.25rem;
+    color: var(--color-texto-gris);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.formulario-pedido {
+    display: block;
+}
+
+.cantidad-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cantidad-contenedor label {
+    color: var(--color-texto-oscuro);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 2.5rem;
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-sm);
+    overflow: hidden;
+}
+
+.selector-cantidad button {
+    width: 2.25rem;
+    height: 100%;
+    border: 0;
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color var(--transicion-rapida);
+}
+
+.selector-cantidad button:hover {
+    background-color: var(--color-superficie);
+}
+
+.selector-cantidad input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--color-texto-oscuro);
+    text-align: center;
+    font-size: 0.875rem;
+    appearance: textfield;
+}
+
+.selector-cantidad input::-webkit-outer-spin-button,
+.selector-cantidad input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.cantidad-contenedor small {
+    color: var(--color-texto-claro);
+    font-size: 0.75rem;
+}
+
+.boton-pedido {
+    margin-top: 1.25rem;
+    padding: 0.8rem;
+}
+
+.seccion-resenas {
+    margin-top: 2.5rem;
+}
+
+.seccion-resenas h2 {
+    margin-bottom: 1rem;
+    color: var(--color-texto-oscuro);
+    font-size: 1.25rem;
+}
+
+.resenas-contenido {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: 1rem;
+}
+
+.resumen-resenas {
+    min-height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.lista-resenas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.numero-resena {
+    color: var(--color-texto-oscuro);
+    font-size: 2rem;
+}
+
+.estrellas-resumen {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.resumen-resenas span {
+    color: var(--color-texto-claro);
+    font-size: 0.8rem;
+}
+
+.resena {
+    padding: 1rem;
+}
+
+.cabecera-resena {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.resena-autor {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resena-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radio-full);
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.cabecera-resena strong {
+    color: var(--color-texto-oscuro);
+    font-size: 0.875rem;
+}
+
+.cabecera-resena small,
+.cabecera-resena time {
+    color: var(--color-texto-claro);
+    font-size: 0.75rem;
+}
+
+.estrellas-resena {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.resena p {
+    margin: 0.75rem 0 0;
+    color: var(--color-texto-gris);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 375px) {
+    .detalle-producto {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .galeria-producto,
+    .informacion-producto {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .informacion-producto {
+        padding-top: 0;
+    }
+
+    .imagen-principal {
+        height: 11.5rem;
+    }
+
+    .imagen-principal img {
+        width: 82%;
+        height: 82%;
+    }
+
+    .flecha-galeria {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .flecha-izquierda {
+        left: 0.25rem;
+    }
+
+    .flecha-derecha {
+        right: 0.25rem;
+    }
+
+    .miniaturas {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .miniaturas li {
+        display: flex;
+        min-width: 0;
+    }
+
+    .miniatura {
+        width: 4rem;
+        height: 2.8rem;
+    }
+
+    .informacion-producto h1 {
+        margin: 0.4rem 0 0.25rem;
+        font-size: 1rem;
+    }
+
+    .calificacion-producto {
+        gap: 0.3rem;
+        font-size: 0.625rem;
+    }
+
+    .estrellas {
+        font-size: 0.75rem;
+    }
+
+    .precio-detalle {
+        gap: 0.4rem;
+        margin-top: 0.4rem;
+        font-size: 1.35rem;
+    }
+
+    .descuento {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.625rem;
+    }
+
+    .precio-anterior {
+        display: none;
+    }
+
+    .informacion-extra {
+        gap: 0.35rem;
+        margin-top: 0.5rem;
+        font-size: 0.625rem;
+    }
+
+    .informacion-extra > div:first-child,
+    .informacion-extra > div:nth-child(2) {
+        display: none;
+    }
+
+    .stock-detalle {
+        margin-top: 0.45rem;
+        font-size: 0.625rem;
+    }
+
+    .stock-detalle i {
+        font-size: 0.4rem;
+    }
+
+    .stock-cantidad {
+        display: none;
+    }
+
+    .descripcion-producto {
+        max-width: 100%;
+        margin: 0.75rem 0 0.9rem;
+        font-size: 0.75rem;
+        line-height: 1.55;
+    }
+
+    .cantidad-contenedor {
+        gap: 0.3rem;
+    }
+
+    .cantidad-contenedor label {
+        font-size: 0.625rem;
+    }
+
+    .selector-cantidad {
+        width: 6rem;
+        height: 2rem;
+    }
+
+    .selector-cantidad button {
+        width: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .selector-cantidad input {
+        font-size: 0.7rem;
+    }
+
+    .cantidad-contenedor small {
+        font-size: 0.6rem;
+    }
+
+    .boton-pedido {
+        margin-top: 0.9rem;
+        padding: 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .seccion-resenas {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .seccion-resenas h2 {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .resenas-contenido {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .resumen-resenas {
+        min-height: 5rem;
+        padding: 0.75rem;
+    }
+
+    .numero-resena {
+        font-size: 1.5rem;
+    }
+
+    .resena {
+        padding: 0.75rem;
+    }
+}

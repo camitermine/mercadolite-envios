@@ -1,0 +1,189 @@
+<pelela view-model="HacerPedido">
+  <barra-navegacion></barra-navegacion>
+
+  <main class="pantalla-pago">
+    <h1 class="solo-lectores">Hacer pedido</h1>
+
+    <p if="cargandoProducto" class="estado-producto" role="status">Cargando producto...</p>
+    <p
+      if="hayErrorProducto"
+      class="estado-producto mensaje-error"
+      bind-content="mensajeErrorProducto"
+      role="alert"
+    ></p>
+
+    <section
+      if="productoCargado"
+      class="tarjeta tarjeta-resumen"
+      aria-label="Resumen del pedido"
+    >
+      <header class="item-producto">
+        <figure class="miniatura-producto-pedido" aria-label="Imagen del producto">
+          <img
+            bind-src="producto.thumbnail"
+            bind-alt="producto.title"
+          >
+        </figure>
+
+        <div class="info-producto-pedido">
+          <h2 bind-content="producto.title"></h2>
+
+          <p class="meta-producto">
+            <span>
+              <span class="texto-precio-unitario">Precio unitario </span>
+              <span bind-content="producto.precioFormateado"></span>
+            </span>
+
+            <span class="separador-meta" aria-hidden="true">·</span>
+
+            <span>
+              <span class="texto-cantidad-larga">Cantidad</span>
+              <span class="texto-cantidad-corta">Cant.</span>
+              <span bind-content="cantidadPedido"></span>
+            </span>
+          </p>
+        </div>
+
+        <dl class="grupo-precio">
+          <dt class="etiqueta-precio">Total</dt>
+          <dd>
+            <data
+              class="precio"
+              bind-content="precioTotalFormateado"
+            ></data>
+          </dd>
+        </dl>
+      </header>
+    </section>
+
+    <section class="tarjeta tarjeta-formulario" aria-labelledby="titulo-entrega">
+      <h2 id="titulo-entrega">Datos de entrega</h2>
+
+      <form class="formulario-entrega">
+        <div class="grupo-formulario" bind-class="clasesCampos.nombreApellido">
+          <label for="nombre">Nombre y apellido</label>
+          <input
+            id="nombre"
+            class="campo-texto"
+            type="text"
+            bind-value="datosEntrega.nombreApellido"
+            placeholder="Ej. Julieta Fernández"
+          >
+          <small
+            if="erroresVisibles.nombreApellido"
+            bind-content="erroresVisibles.nombreApellido"
+          ></small>
+        </div>
+
+        <div class="grupo-formulario" bind-class="clasesCampos.email">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            class="campo-texto"
+            type="email"
+            bind-value="datosEntrega.email"
+            placeholder="julieta.fernandez@correo.com"
+          >
+          <small
+            if="erroresVisibles.email"
+            bind-content="erroresVisibles.email"
+          ></small>
+        </div>
+
+        <fieldset class="fila-campos">
+          <legend class="solo-lectores">Datos de contacto y ubicación</legend>
+
+          <div class="grupo-formulario" bind-class="clasesCampos.telefono">
+            <label for="telefono">Teléfono</label>
+            <input
+              id="telefono"
+              class="campo-texto"
+              type="tel"
+              bind-value="datosEntrega.telefono"
+              placeholder="11 2345-6789"
+            >
+            <small
+              if="erroresVisibles.telefono"
+              bind-content="erroresVisibles.telefono"
+            ></small>
+          </div>
+
+          <div class="grupo-formulario" bind-class="clasesCampos.localidad">
+            <label for="localidad">Localidad</label>
+            <input
+              id="localidad"
+              class="campo-texto"
+              type="text"
+              bind-value="datosEntrega.localidad"
+              placeholder="Ej. Palermo, CABA"
+            >
+            <small
+              if="erroresVisibles.localidad"
+              bind-content="erroresVisibles.localidad"
+            ></small>
+          </div>
+        </fieldset>
+
+        <div class="grupo-formulario" bind-class="clasesCampos.direccion">
+          <label for="direccion">Dirección</label>
+          <input
+            id="direccion"
+            class="campo-texto"
+            type="text"
+            bind-value="datosEntrega.direccion"
+            placeholder="Calle y número"
+          >
+          <small
+            if="erroresVisibles.direccion"
+            bind-content="erroresVisibles.direccion"
+          ></small>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="entrega">Método de entrega</label>
+          <select
+            id="entrega"
+            class="campo-texto"
+            bind-value="datosEntrega.metodoEntrega"
+          >
+            <option for-each="metodo of metodosEntrega" bind-content="metodo"></option>
+          </select>
+        </div>
+
+        <p
+          if="mostrarErrorGeneral"
+          class="texto-error-general"
+          role="alert"
+        >
+          Revisá los campos marcados en rojo antes de confirmar.
+        </p>
+
+        <p
+          if="hayErrorConfirmacion"
+          class="texto-error-general"
+          bind-content="mensajeErrorConfirmacion"
+          role="alert"
+        ></p>
+
+        <menu class="acciones">
+          <button
+            type="button"
+            class="boton boton-secundario"
+            click="cancelar"
+          >
+            Cancelar
+          </button>
+
+          <button
+            type="button"
+            class="boton boton-primario"
+            click="confirmar"
+            bind-enabled="productoCargado"
+          >
+            Confirmar pedido
+          </button>
+        </menu>
+      </form>
+    </section>
+  </main>
+</pelela>

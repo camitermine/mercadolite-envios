@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis pedidos - MercadoLite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/misPedidos.css">
+</head>
+
+<body>
+    <header class="barra-superior" aria-label="Barra superior">
+        <a href="#" class="marca" aria-label="MercadoLite - Ir al catálogo">
+            <span class="marca-icono" aria-hidden="true">M</span>
+            <span class="marca-nombre">MercadoLite</span>
+        </a>
+        <form class="barra-busqueda" role="search">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" name="busqueda" placeholder="Buscar productos" aria-label="Buscar productos">
+        </form>
+        <a href="#" class="enlace-pedidos" aria-current="page">Mis pedidos</a>
+    </header>
+
+    <main class="pedidos">
+        <header class="encabezado-pedidos">
+            <h1>Mis pedidos</h1>
+            <span class="contador-pedidos">2 pedidos</span>
+        </header>
+
+        <ul class="lista-pedidos">
+            <li class="tarjeta tarjeta-pedido">
+                <img class="miniatura-pedido" src="../images/ice-cream.png" alt="Ice Cream">
+
+                <div class="info-pedido">
+                    <span class="numero-pedido">Pedido #1042</span>
+                    <h2 class="titulo-pedido">Ice Cream</h2>
+                    <span class="meta-pedido"><span class="texto-cantidad-larga">Cantidad</span><span class="texto-cantidad-corta">Cant.</span> 42 · 30 jun 2026</span>
+                </div>
+
+                <div class="grupo-estado">
+                    <span class="etiqueta etiqueta-exito estado-pedido">Confirmado</span>
+                    <span class="precio-pedido">$230,58</span>
+                </div>
+
+                <div class="acciones-pedido">
+                    <button type="button" class="boton boton-primario" aria-label="Ver detalle del pedido #1042">Ver detalle</button>
+                    <button type="button" class="boton boton-peligro" aria-label="Cancelar el pedido #1042">Cancelar</button>
+                </div>
+            </li>
+
+            <li class="tarjeta tarjeta-pedido">
+                <img class="miniatura-pedido" src="../images/juice.png" alt="Juice">
+
+                <div class="info-pedido">
+                    <span class="numero-pedido">Pedido #1039</span>
+                    <h2 class="titulo-pedido">Juice</h2>
+                    <span class="meta-pedido"><span class="texto-cantidad-larga">Cantidad</span><span class="texto-cantidad-corta">Cant.</span> 25 · 27 jun 2026</span>
+                </div>
+
+                <div class="grupo-estado">
+                    <span class="etiqueta etiqueta-alerta estado-pedido">Pendiente</span>
+                    <span class="precio-pedido">$99,75</span>
+                </div>
+
+                <div class="acciones-pedido">
+                    <button type="button" class="boton boton-primario" aria-label="Ver detalle del pedido #1039">Ver detalle</button>
+                    <button type="button" class="boton boton-peligro" aria-label="Cancelar el pedido #1039">Cancelar</button>
+                </div>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

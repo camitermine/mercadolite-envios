@@ -1,0 +1,43 @@
+<component view-model="ResenaCard">
+
+  <article class="tarjeta resena">
+
+    <header class="cabecera-resena">
+
+      <div class="resena-autor">
+
+        <span
+          class="resena-avatar"
+          aria-hidden="true"
+        >
+          <span bind-content="inicial"></span>
+        </span>
+
+        <div>
+
+          <strong
+            bind-content="resena.reviewerName"
+          ></strong>
+
+          <div
+            class="estrellas-resena"
+            aria-hidden="true"
+          >
+            <calificacion-estrellas
+              prop-calificacion="resena.rating"
+            ></calificacion-estrellas>
+          </div>
+
+        </div>
+
+      </div>
+
+      <time bind-content="fechaFormateada"></time>
+
+    </header>
+
+    <p bind-content="resena.comment"></p>
+
+  </article>
+
+</component>

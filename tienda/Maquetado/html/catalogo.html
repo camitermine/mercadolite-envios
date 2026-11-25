@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - MercadoLite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
+</head>
+
+<body>
+    <header class="barra-superior" aria-label="Encabezado principal">
+        <a href="#" class="marca" aria-label="MercadoLite - Ir al catálogo">
+            <span class="marca-icono" aria-hidden="true">M</span>
+            <span class="marca-nombre">MercadoLite</span>
+        </a>
+        <form class="barra-busqueda" role="search">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" name="busqueda" placeholder="Buscar productos" aria-label="Buscar productos">
+        </form>
+        <a href="#" class="enlace-pedidos">Mis pedidos</a>
+    </header>
+
+    <main>
+        <h1 class="solo-lectores">Catálogo de productos</h1>
+
+        <form class="barra-filtros" aria-label="Filtros del catálogo">
+            <fieldset class="filtros-izq">
+                <legend class="solo-lectores">Filtros de productos</legend>
+                <button type="button" class="boton-filtro" aria-haspopup="menu" aria-expanded="false">Categoría <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+                <button type="button" class="boton-filtro filtro-orden" aria-haspopup="menu" aria-expanded="false"><span>Ordenar por: precio</span> <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            </fieldset>
+            <div class="filtros-der" role="status" aria-live="polite">
+                <span>8 productos</span>
+            </div>
+        </form>
+
+        <section class="grilla-productos" aria-label="Listado de productos">
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/ice-cream.png" alt="Ice Cream">
+                </figure>
+                <div class="info-producto">
+                    <h2>Ice Cream</h2>
+                    <p class="precio"><data value="5.49">$5,49</data></p>
+                    <p class="calificacion" aria-label="3.4 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star-half estrella-mitad" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                        <span>3.4</span>
+                    </p>
+                    <p class="stock">27 disponibles</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/juice.png" alt="Juice">
+                </figure>
+                <div class="info-producto">
+                    <h2>Juice</h2>
+                    <p class="precio"><data value="3.99">$3,99</data></p>
+                    <p class="calificacion" aria-label="3.9 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                        <span>3.9</span>
+                    </p>
+                    <p class="stock">50 disponibles</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/apple.png" alt="Apple">
+                </figure>
+                <div class="info-producto">
+                    <h2>Apple</h2>
+                    <p class="precio"><data value="1.99">$1,99</data></p>
+                    <p class="calificacion" aria-label="4.2 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                        <span>4.2</span>
+                    </p>
+                    <p class="stock">9 disponibles</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/milk.png" alt="Milk">
+                </figure>
+                <div class="info-producto">
+                    <h2>Milk</h2>
+                    <p class="precio"><data value="2.49">$2,49</data></p>
+                    <p class="calificacion" aria-label="3.4 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star-half estrella-mitad" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                        <span>3.4</span>
+                    </p>
+                    <p class="stock">24 disponibles</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/honey.png" alt="Honey Jar">
+                </figure>
+                <div class="info-producto">
+                    <h2>Honey Jar</h2>
+                    <p class="precio"><data value="6.99">$6,99</data></p>
+                    <p class="calificacion" aria-label="4.7 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star-half estrella-mitad" aria-hidden="true"></i>
+                        <span>4.7</span>
+                    </p>
+                    <p class="stock">34 disponibles</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/rice.png" alt="Rice">
+                </figure>
+                <div class="info-producto">
+                    <h2>Rice</h2>
+                    <p class="precio"><data value="4.49">$4,49</data></p>
+                    <p class="calificacion" aria-label="4.4 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star-half estrella-mitad" aria-hidden="true"></i>
+                        <span>4.4</span>
+                    </p>
+                    <p class="stock">62 disponibles</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/strawberry.png" alt="Strawberry">
+                </figure>
+                <div class="info-producto">
+                    <h2>Strawberry</h2>
+                    <p class="precio"><data value="3.49">$3,49</data></p>
+                    <p class="calificacion" aria-label="4.1 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph ph-star estrella-vacia" aria-hidden="true"></i>
+                        <span>4.1</span>
+                    </p>
+                    <p class="stock" aria-label="Aviso: Últimas 3 unidades disponibles">¡Últimas 3 unidades!</p>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-producto">
+                <figure class="miniatura-producto">
+                    <span class="etiqueta">Almacén</span>
+                    <img src="../images/coffee.png" alt="Nescafe Coffee">
+                </figure>
+                <div class="info-producto">
+                    <h2>Nescafe Coffee</h2>
+                    <p class="precio"><data value="8.99">$8,99</data></p>
+                    <p class="calificacion" aria-label="4.8 estrellas">
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <i class="ph-fill ph-star estrella-llena" aria-hidden="true"></i>
+                        <span>4.8</span>
+                    </p>
+                    <p class="stock">15 disponibles</p>
+                </div>
+            </article>
+        </section>
+
+        <nav class="paginacion" aria-label="Paginación">
+            <button type="button" class="boton-paginacion" disabled aria-disabled="true" aria-label="Ir a la página anterior">Anterior</button>
+            <button type="button" class="boton-paginacion activa" aria-current="page" aria-label="Página 1">1</button>
+            <button type="button" class="boton-paginacion" aria-label="Ir a la página 2">2</button>
+            <button type="button" class="boton-paginacion" aria-label="Ir a la página 3">3</button>
+            <button type="button" class="boton-paginacion" aria-label="Ir a la página siguiente">Siguiente</button>
+        </nav>
+    </main>
+</body>
+
+</html>

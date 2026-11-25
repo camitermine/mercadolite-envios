@@ -1,0 +1,64 @@
+<pelela view-model="Catalogo">
+  <barra-navegacion></barra-navegacion>
+
+  <main>
+    <h1 class="solo-lectores">Catálogo de productos</h1>
+
+    <barra-busqueda link-busqueda-aplicada="busquedaAplicada"></barra-busqueda>
+
+    <form class="barra-filtros" aria-label="Filtros del catálogo">
+      <fieldset class="filtros-izq">
+        <legend class="solo-lectores">Filtros de productos</legend>
+
+        <label class="solo-lectores" for="categoria">Categoría</label>
+        <select id="categoria" class="boton-filtro" bind-value="categoriaSeleccionada">
+          <option value="">Todas las categorías</option>
+          <option for-each="categoria of categorias" bind-content="categoria"></option>
+        </select>
+
+        <label class="solo-lectores" for="orden-precio">Ordenar por precio</label>
+        <select id="orden-precio" class="boton-filtro filtro-orden" bind-value="ordenPrecio">
+          <option value="">Sin ordenar</option>
+          <option value="asc">Menor precio</option>
+          <option value="desc">Mayor precio</option>
+        </select>
+      </fieldset>
+
+      <div class="filtros-der" role="status" aria-live="polite">
+        <span bind-content="cantidadProductos"></span>
+      </div>
+    </form>
+
+    <p if="cargando" class="estado-catalogo" role="status">Cargando productos...</p>
+    <p if="mensajeError" class="estado-catalogo mensaje-error" bind-content="mensajeError" role="alert"></p>
+    <button if="mensajeError" type="button" class="boton boton-primario boton-reintentar" click="initialize">
+      Reintentar
+    </button>
+    <p if="sinResultados" class="estado-catalogo" role="status">No encontramos productos para esos filtros.</p>
+
+    <section class="grilla-productos" aria-label="Listado de productos">
+      <div for-each="producto of productosVisibles" class="contenedor-producto">
+        <producto-card
+          prop-producto="producto"
+          prop-al-seleccionar="verProducto"
+        ></producto-card>
+      </div>
+    </section>
+
+    <nav class="paginacion" aria-label="Paginación">
+      <button
+        type="button"
+        class="boton-paginacion"
+        click="paginaAnterior"
+        bind-enabled="paginaAnteriorHabilitada"
+      >Anterior</button>
+      <span class="pagina-actual" bind-content="indicadorPagina" aria-live="polite"></span>
+      <button
+        type="button"
+        class="boton-paginacion"
+        click="paginaSiguiente"
+        bind-enabled="paginaSiguienteHabilitada"
+      >Siguiente</button>
+    </nav>
+  </main>
+</pelela>
