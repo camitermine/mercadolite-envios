@@ -15,9 +15,6 @@ Un sistema de comercio electrónico con dos aplicaciones web que comparten una *
 
 Las dos apps no se conocen entre sí: solo hablan con el backend por HTTP/JSON. Lo que une todo es el **número de seguimiento** (`AR-1000xx`), que genera la API.
 
-> Trabajo práctico grupal de **Algoritmos III** (UNSAM, 2026). Las tres entregas fueron aprobadas.
-> Este repo reúne en un solo lugar el código final de los tres repos de la cursada, con permiso de todo el grupo.
-
 ---
 
 ## Cómo funciona
@@ -173,14 +170,5 @@ Cada carpeta tiene su propio README con más detalle: endpoints de la API, decis
 1. **Maquetado** (HTML + CSS): las cinco vistas de la tienda en versión mobile (375px) y web (1440px), con la paleta de colores en variables. Está en [`tienda/Maquetado/`](./tienda/Maquetado).
 2. **MercadoLite con PelelaJS:** la tienda funcionando, consumiendo la API de productos de DummyJSON, con view models testeados.
 3. **MercadoLite Envíos:** la API REST en Kotlin, el panel en React y la integración con la tienda: cada pedido confirmado se da de alta en la API, y la tienda muestra el estado real del envío.
-
-## Equipo
-
-Grupo 20, Algoritmos III (UNSAM, 2026):
-
-- Iván Bonomi ([@ivanbonomi13](https://github.com/ivanbonomi13))
-- Nicolás Diez ([@nicodiez02](https://github.com/nicodiez02))
-- Julieta Elhalem ([@julietaelhalem](https://github.com/julietaelhalem))
-- Camila Términe ([@camitermine](https://github.com/camitermine)): pantallas **Pendientes** y **Nuevo envío**, conexión de la tienda con la API y CI.
 
 PelelaJS es un framework de la cátedra ([Uqbar](https://algo3.uqbar-project.org/)).
